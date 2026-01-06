@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+
+struct Address {
+    int number;
+    char road[50];
+    char district[30];
+    char province[30];
+    char postcode[8];
+};
+
+struct Phone {
+    char home[16];
+    char mobile[16];
+};
+
+struct Student {
+    char id[9];
+    char name[30];
+    char surname[30];
+    Address addr;
+    Phone tel;
+};
+
+int main() {
+    Student s1;
+
+    cout << "Enter Student Information:\n";
+    cout << "ID: "; cin >> s1.id;
+    cout << "Name: "; cin >> s1.name;
+    cout << "Surname: "; cin >> s1.surname;
+
+    cout << "Address - House Number: ";
+    cin >> s1.addr.number;
+    cout << "Address - Road: ";
+    cin >> s1.addr.road;
+    cout << "Address - District: ";
+    cin >> s1.addr.district;
+    cout << "Address - Province: ";
+    cin >> s1.addr.province;
+    cout << "Address - Postcode: ";
+    cin >> s1.addr.postcode;
+
+    cout << "Phone - Home: ";
+    cin >> s1.tel.home;
+    cout << "Phone - Mobile: ";
+    cin >> s1.tel.mobile;
+
+    cout << "\n===== Output =====\n";
+    cout << "ID: " << s1.id << '\n';
+    cout << "Name: " << s1.name << " " << s1.surname << '\n';
+    cout << "Address: " << s1.addr.number << " " << s1.addr.road
+         << ", " << s1.addr.district << ", " << s1.addr.province
+         << " " << s1.addr.postcode << '\n';
+    cout << "Phone - Home: " << s1.tel.home << '\n';
+    cout << "Phone - Mobile: " << s1.tel.mobile << '\n';
+
+    return 0;
+}
+
